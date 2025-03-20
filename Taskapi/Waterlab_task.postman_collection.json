@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "084c5496-865c-42c5-a25e-cb0088103c68",
+		"name": "Waterlab_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24954281"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"kaustabh\",\r\n    \"password\": \"kaustabh@123#\",\r\n    \"email\": \"kaustabh@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/users/register/"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"kaustabh\",\r\n    \"password\":\"kaustabh@123#\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/users/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "exist_login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"kaustabh\",\r\n    \"password\":\"kaustabh@123#\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/users/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQyMzIxODcyLCJpYXQiOjE3NDIzMTgyNzIsImp0aSI6ImY2ZTYwOGIyZjBhZDQ0MDlhYjI3YzgxZGI1NTNjMzdkIiwidXNlcl9pZCI6MTN9.A1zLhuiGSfmeDIBiD4Kw3VpKoR2jgfOfyWSGgl_Mjks"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MjkyMzA3MiwiaWF0IjoxNzQyMzE4MjcyLCJqdGkiOiJlMDg4NzdiN2QxZjE0ZjFiYjhmZWQ5OWEzM2E5NjAwNCIsInVzZXJfaWQiOjEzfQ.EuMSwGhmi9rx5dQbiHq92vHp4r7GTqEpS5RzVihcL0Q\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/users/logout/"
+			},
+			"response": []
+		},
+		{
+			"name": "List_all_blog",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQyMzIxODcyLCJpYXQiOjE3NDIzMTgyNzIsImp0aSI6ImY2ZTYwOGIyZjBhZDQ0MDlhYjI3YzgxZGI1NTNjMzdkIiwidXNlcl9pZCI6MTN9.A1zLhuiGSfmeDIBiD4Kw3VpKoR2jgfOfyWSGgl_Mjks"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/blogs/blog-list-create/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create_blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQyMzIxODcyLCJpYXQiOjE3NDIzMTgyNzIsImp0aSI6ImY2ZTYwOGIyZjBhZDQ0MDlhYjI3YzgxZGI1NTNjMzdkIiwidXNlcl9pZCI6MTN9.A1zLhuiGSfmeDIBiD4Kw3VpKoR2jgfOfyWSGgl_Mjks"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"My 2nd Post\",\r\n  \"content\": \"This is the second content content.\",\r\n  \"category\": \"General\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/blogs/blog-list-create/"
+			},
+			"response": []
+		},
+		{
+			"name": "single_blog",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQyMzM5NTQyLCJpYXQiOjE3NDIzMjM5NDIsImp0aSI6IjU4NzgwMzQxNjkyZTQ3NGM5MDQ3MzU4Y2JmNzk4Mzc3IiwidXNlcl9pZCI6MTR9.ZNhhBYV2UFOhbVUpw0G8IBv6nvUNwggBHCSPzSeFPWU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/blogs/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQyMzM5NTQyLCJpYXQiOjE3NDIzMjM5NDIsImp0aSI6IjU4NzgwMzQxNjkyZTQ3NGM5MDQ3MzU4Y2JmNzk4Mzc3IiwidXNlcl9pZCI6MTR9.ZNhhBYV2UFOhbVUpw0G8IBv6nvUNwggBHCSPzSeFPWU"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Post deleted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/blogs/4/"
+			},
+			"response": []
+		},
+		{
+			"name": "filter_catetgory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blogs/?category=technology",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blogs",
+						""
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "technology"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter_paginator",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
