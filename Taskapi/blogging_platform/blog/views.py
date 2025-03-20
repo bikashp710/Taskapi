@@ -26,21 +26,18 @@ class BlogPagination(PageNumberPagination):
 @permission_classes([IsAuthenticated])
 def blog_post_list_create(request):
     if request.method == 'GET':
-        # Filtering by category
+       
         category = request.query_params.get('category', None)
         posts = BlogPost.objects.filter(category=category) if category else BlogPost.objects.all()
-
-        # Check if pagination should be skipped
         fetch_all = request.query_params.get('all', 'false').lower() == 'true'
         if not fetch_all:
-            # Apply pagination
+           
             paginator = BlogPagination()
             paginated_posts = paginator.paginate_queryset(posts, request)
             if paginated_posts is not None:
                 serializer = BlogPostSerializer(paginated_posts, many=True)
                 return paginator.get_paginated_response(serializer.data)
 
-        # Return all posts without pagination
         serializer = BlogPostSerializer(posts, many=True)
         return Response(serializer.data)
 
